@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Quiz</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="style.css")}}" />
+    </head>
+
+    <body>
+
+        <h1>Python Quiz</h1></br>
+
+
+        {% block  content%}
+        
+        
+        <form action="/" method="post">
+
+
+            <label for="first">1. With which function display a message ?</label>
+            <select name="first">
+
+                <option>Choose an answer</option>
+                <option value="item1">print()</option>
+                <option value="item2">str()</option>
+                <option value="item3">def()</option>
+
+            </select></br></br>
+
+            {% if first_question ==  "item1" %}
+                <p>Bonne réponse</p>
+
+            {% elif first_question %}
+                <p>Mauvaise Réponse</p>
+
+
+            {% endif %}
+
+
+
+            <label for="second">2. What is a String</label>
+            <select name="second">
+
+
+                <option>Choose an answer</option>
+                <option value="item1">12,33</option>
+                <option value="item2">200</option>
+                <option value="item3">"hello"</option>
+
+
+            </select></br></br>
+
+
+            {% if second_question == "item3" %}
+                <p>Bonne Réponse</p>
+
+            {% elif second_question %}
+                 <p>Mauvaise Réponse</p>
+
+            {% endif %}
+
+
+
+
+
+            <label for="third">3. What's an integer ?</label>
+            <select name="third">
+
+
+                <option>Choose an answer</option>
+                <option value="item1">while True:</option>
+                <option value="item2">12</option>
+                <option value="item3">for ...</option>
+
+
+            </select></br></br>
+
+
+            {% if third_question == "item2" %}
+                <p>Bonne Réponse</p>
+
+            {% elif third_question %}
+                <p>Mauvaise Réponse</p>
+
+            {% endif %}
+
+
+
+            <label for="fourth">4. What is a loop</label>
+
+            <select name="fourth">
+
+                <option>Choose an answer</option>
+                <option value="item1">dictionnary</option>
+                <option value="item2">loop = []</option>
+                <option value="item3">for , while</option>
+
+            </select></br></br>
+
+
+            {% if fourth_question == "item3" %}
+
+                <p>Bonne Réponse</p>
+
+            {% elif fourth_question %}
+               
+                <p>Mauvaise Réponse</p>
+
+            {% endif %}
+
+
+
+            <label for="fifth">5. How to create an infinity loop ?</label>
+            <input name="fifth" placeholder="Write the loop" /></br></br>
+
+
+            {% if fifth_question == "while True:" %}
+
+               <p>Bonne Réponse</p>
+
+            {% elif fifth_question %}
+
+                <p>Mauvaise Réponse</p>
+
+            {% endif %}
+
+
+            <input type="submit" value="Verify" />
+
+
+            
+
+
+
+        </form>
+        
+        
+        
+        {% endblock %}
+
+
+    </body>
+</html>
